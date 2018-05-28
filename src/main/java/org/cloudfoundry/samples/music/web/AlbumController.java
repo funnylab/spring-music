@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @RestController
@@ -21,7 +22,9 @@ public class AlbumController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public Iterable<Album> albums() {
+    public Iterable<Album> albums(HttpSession session) {
+    	logger.info("album list");
+    	session.setAttribute("test", "hello");
         return repository.findAll();
     }
 

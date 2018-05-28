@@ -10,7 +10,7 @@ public class Application {
 
     public static void main(String[] args) {
         new SpringApplicationBuilder(Application.class)
-                .initializers(new SpringApplicationContextInitializer())
+                //.initializers(new SpringApplicationContextInitializer())
                 .listeners(new AlbumRepositoryPopulator())
                 .application()
                 .run(args);

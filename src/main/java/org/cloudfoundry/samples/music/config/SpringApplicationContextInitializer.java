@@ -2,7 +2,7 @@ package org.cloudfoundry.samples.music.config;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration;
+/*import org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration;
 import org.springframework.boot.autoconfigure.data.mongo.MongoRepositoriesAutoConfiguration;
 import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration;
@@ -17,10 +17,10 @@ import org.springframework.cloud.service.common.MysqlServiceInfo;
 import org.springframework.cloud.service.common.OracleServiceInfo;
 import org.springframework.cloud.service.common.PostgresqlServiceInfo;
 import org.springframework.cloud.service.common.RedisServiceInfo;
-import org.springframework.cloud.service.common.SqlServerServiceInfo;
+import org.springframework.cloud.service.common.SqlServerServiceInfo;*/
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.core.env.ConfigurableEnvironment;
+/*import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.MapPropertySource;
 import org.springframework.core.env.PropertySource;
 import org.springframework.util.StringUtils;
@@ -32,14 +32,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.stream.Stream;*/
 
 public class SpringApplicationContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 
     private static final Log logger = LogFactory.getLog(SpringApplicationContextInitializer.class);
 
-    private static final Map<Class<? extends ServiceInfo>, String> serviceTypeToProfileName = new HashMap<>();
-    private static final List<String> validLocalProfiles =
+    //private static final Map<Class<? extends ServiceInfo>, String> serviceTypeToProfileName = new HashMap<>();
+    /*private static final List<String> validLocalProfiles =
             Arrays.asList("mysql", "postgres", "sqlserver", "oracle", "mongodb", "redis");
 
     static {
@@ -49,11 +49,11 @@ public class SpringApplicationContextInitializer implements ApplicationContextIn
         serviceTypeToProfileName.put(RedisServiceInfo.class, "redis");
         serviceTypeToProfileName.put(OracleServiceInfo.class, "oracle");
         serviceTypeToProfileName.put(SqlServerServiceInfo.class, "sqlserver");
-    }
+    }*/
 
     @Override
     public void initialize(ConfigurableApplicationContext applicationContext) {
-        Cloud cloud = getCloud();
+        /*Cloud cloud = getCloud();
 
         ConfigurableEnvironment appEnvironment = applicationContext.getEnvironment();
 
@@ -61,10 +61,10 @@ public class SpringApplicationContextInitializer implements ApplicationContextIn
 
         addCloudProfile(cloud, appEnvironment);
 
-        excludeAutoConfiguration(appEnvironment);
+        excludeAutoConfiguration(appEnvironment);*/
     }
 
-    private void addCloudProfile(Cloud cloud, ConfigurableEnvironment appEnvironment) {
+    /*private void addCloudProfile(Cloud cloud, ConfigurableEnvironment appEnvironment) {
         if (cloud == null) {
             return;
         }
@@ -155,5 +155,5 @@ public class SpringApplicationContextInitializer implements ApplicationContextIn
                 RedisAutoConfiguration.class.getName(),
                 RedisRepositoriesAutoConfiguration.class.getName()
         ));
-    }
+    }*/
 }
