@@ -17,7 +17,7 @@ public class SessionConfig {
 	 @Bean
      public LettuceConnectionFactory connectionFactory() {
              LettuceConnectionFactory connectionFactory = new LettuceConnectionFactory();
-             connectionFactory.setHostName("13.125.211.164");
+             connectionFactory.setHostName("10.10.16.244");
              connectionFactory.setPort(6379);
              return connectionFactory;
      }
