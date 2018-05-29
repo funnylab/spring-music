@@ -14,11 +14,18 @@ import org.springframework.session.web.http.DefaultCookieSerializer;
 @Configuration
 @EnableRedisHttpSession
 public class SessionConfig {
+	
+	@Value("${spring.redis.host}")
+	String host;
+	
+	@Value("${spring.redis.port}")
+	int port;
+	
 	 @Bean
      public LettuceConnectionFactory connectionFactory() {
              LettuceConnectionFactory connectionFactory = new LettuceConnectionFactory();
-             connectionFactory.setHostName("13.125.211.164");
-             connectionFactory.setPort(6379);
+             connectionFactory.setHostName(host);
+             connectionFactory.setPort(port);
              return connectionFactory;
      }
 }

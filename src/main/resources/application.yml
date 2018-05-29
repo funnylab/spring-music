@@ -15,6 +15,9 @@ spring:
     redis:
       flush-mode: on-save
       namespace: 'spring:session'
+  redis:
+    host: 10.10.16.244
+    port: 6379
 server:
   servlet:
     session:
