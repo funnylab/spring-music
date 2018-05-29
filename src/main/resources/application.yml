@@ -16,7 +16,7 @@ spring:
       flush-mode: on-save
       namespace: 'spring:session'
   redis:
-    host: 10.10.16.244
+    host: kkanzo-cache-redis.xps8vl.ng.0001.apn2.cache.amazonaws.com
     port: 6379
 server:
   servlet:
