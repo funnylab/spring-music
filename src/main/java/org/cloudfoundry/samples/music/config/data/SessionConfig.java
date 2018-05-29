@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
+import org.springframework.session.data.redis.config.ConfigureRedisAction;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 import org.springframework.session.web.http.CookieSerializer;
 import org.springframework.session.web.http.DefaultCookieSerializer;
@@ -28,4 +29,9 @@ public class SessionConfig {
              connectionFactory.setPort(port);
              return connectionFactory;
      }
+	 
+	 @Bean
+	 public ConfigureRedisAction configureRedisAction() {
+	     return ConfigureRedisAction.NO_OP;
+	 }
 }
