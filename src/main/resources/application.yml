@@ -4,6 +4,8 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: kkanzo
     password: qwer1234
+    hikari:
+      max-lifetime: 60
   jpa:
     database: mysql
     generate-ddl: true
